@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국제학교 전문과외 | 무료 모의수업 신청</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+:root{
+  --yellow:#FFD400;
+  --black:#16140F;
+  --navy:#121A38;
+  --blue:#2D6CDF;
+  --red:#E63946;
+  --lightblue:#EAF2FF;
+  --cream:#FFFBEC;
+  --gray:#5B5A55;
+  --maxw:760px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:#fff;
+  color:var(--black);
+  font-family:'Noto Sans KR',sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Black Han Sans',sans-serif;
+  margin:0 0 .3em;
+  line-height:1.25;
+  letter-spacing:.5px;
+}
+p{margin:0 0 1em;}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;list-style:none;}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}html{scroll-behavior:auto;}}
+
+.poster{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+.sec{padding:64px 0;}
+.center{text-align:center;}
+.eyebrow{
+  display:inline-block;font-family:'Black Han Sans',sans-serif;font-size:.85rem;
+  background:var(--black);color:var(--yellow);padding:6px 16px;border-radius:30px;margin-bottom:16px;
+}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+/* HERO */
+.hero{
+  background:var(--black);color:#fff;padding:54px 0 60px;text-align:center;
+  background-image:
+    radial-gradient(circle at 8% 18%, rgba(255,212,0,.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 64%, rgba(255,212,0,.1) 0 2px, transparent 3px);
+  background-size:34px 34px;
+}
+.hero h1{
+  font-size:clamp(2.1rem,8vw,2.9rem);color:var(--yellow);
+  text-shadow:3px 3px 0 #000, -1px -1px 0 rgba(255,255,255,.15);
+}
+.hero .sub{
+  display:inline-block;margin-top:14px;background:#fff;color:var(--black);
+  border-radius:14px;padding:14px 20px;font-weight:700;font-size:.98rem;
+  box-shadow:0 6px 0 var(--yellow);
+}
+.hero-figure{margin:34px auto 0;width:150px;}
+.hero-actions{margin-top:30px;}
+.btn{
+  display:inline-block;font-family:'Black Han Sans',sans-serif;font-size:1.05rem;
+  padding:15px 30px;border-radius:10px;border:3px solid var(--black);
+}
+.btn-cta{background:var(--yellow);color:var(--black);box-shadow:0 5px 0 var(--black);}
+
+/* TRAITS */
+.traits{
+  background:var(--cream);
+  background-image:radial-gradient(circle, rgba(0,0,0,.05) 1.5px, transparent 1.6px);
+  background-size:16px 16px;
+}
+.traits-badge{
+  background:var(--yellow);border:3px solid var(--black);border-radius:14px;
+  padding:14px 18px;display:inline-block;transform:rotate(-2deg);
+  box-shadow:5px 5px 0 var(--black);margin-bottom:30px;
+}
+.traits-badge h2{margin:0;font-size:1.5rem;}
+.trait-list{display:grid;gap:14px;}
+.trait-item{
+  background:#fff;border:2.5px solid var(--black);border-radius:12px;
+  padding:16px 18px;display:flex;gap:12px;align-items:flex-start;
+  box-shadow:4px 4px 0 rgba(0,0,0,.12);
+}
+.trait-num{
+  flex:none;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-family:'Black Han Sans',sans-serif;font-size:.95rem;
+}
+.trait-item p{margin:0;font-weight:500;}
+
+/* TEACHERS */
+.teachers{background:var(--navy);color:#fff;}
+.teachers h2{color:var(--yellow);}
+.teachers .sub{color:#c9d3ee;margin-bottom:30px;}
+.teacher-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.teacher-card{
+  background:#1A2348;border:2px solid #2C3768;border-radius:12px;padding:14px 8px 12px;text-align:center;
+}
+.t-avatar{
+  width:62px;height:62px;border-radius:14px;margin:0 auto 8px;border:2px solid #fff;
+  display:flex;align-items:center;justify-content:center;
+}
+.t-avatar svg{width:70%;height:70%;}
+.teacher-card .role{font-size:.74rem;color:var(--yellow);font-weight:700;}
+
+/* SUBJECTS TABLE */
+.subjects table{width:100%;border-collapse:collapse;font-size:.86rem;}
+.subjects th,.subjects td{border:1.5px solid #e3ddc8;padding:11px 10px;text-align:left;vertical-align:top;}
+.subjects th{background:var(--yellow);font-family:'Black Han Sans',sans-serif;font-size:.92rem;}
+.subjects td:first-child{font-weight:700;white-space:nowrap;background:#FFFBEC;}
+
+/* RANKING */
+.ranking{background:linear-gradient(180deg,#2D6CDF,#1B3F94);color:#fff;}
+.ranking h2{color:#fff;}
+.ranking .sub{color:#dbe6ff;margin-bottom:26px;}
+.rank-list{display:flex;flex-direction:column;gap:10px;}
+.rank-row{
+  display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.08);
+  border-radius:10px;padding:12px 16px;
+}
+.rank-row.top{
+  background:var(--yellow);color:var(--black);transform:scale(1.04);
+  box-shadow:0 6px 0 rgba(0,0,0,.25);
+}
+.rank-no{font-family:'Black Han Sans',sans-serif;font-size:1.2rem;width:26px;flex:none;}
+.rank-row.top .rank-no{color:var(--red);}
+.rank-name{font-weight:700;flex:1;}
+.rank-row.top .rank-name{font-family:'Black Han Sans',sans-serif;font-size:1.05rem;}
+
+/* REVIEWS */
+.reviews{background:#fff;}
+.bubble-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.bubble{
+  background:#FFE74C;border:2.5px solid var(--black);border-radius:16px 16px 16px 4px;
+  padding:14px 14px 12px;font-size:.84rem;position:relative;transform:rotate(var(--rr,0deg));
+}
+.bubble:nth-child(even){background:#fff;border-color:var(--black);}
+.bubble .who{display:block;margin-top:8px;font-size:.72rem;color:var(--gray);font-weight:700;}
+
+/* CHART */
+.chart-section{background:var(--lightblue);}
+.chart-wrap{display:flex;align-items:flex-end;gap:14px;height:200px;margin:30px 0 10px;padding:0 6px;}
+.bar{flex:1;background:linear-gradient(180deg,#5C92F2,var(--blue));border-radius:8px 8px 0 0;position:relative;display:flex;align-items:flex-start;justify-content:center;}
+.bar span{position:absolute;top:-26px;font-family:'Black Han Sans',sans-serif;font-size:.85rem;color:var(--navy);}
+.bar small{position:absolute;bottom:-24px;font-size:.72rem;color:var(--gray);}
+.chart-note{text-align:center;font-size:.76rem;color:var(--gray);margin-top:30px;}
+
+/* PAIN POINTS */
+.pain .bubble2{
+  border:2.5px solid var(--black);border-radius:50px;padding:13px 20px;display:inline-block;
+  font-weight:700;font-size:.88rem;background:#fff;box-shadow:3px 3px 0 rgba(0,0,0,.15);
+}
+.pain-row{display:flex;justify-content:center;margin-bottom:14px;}
+.pain-row:nth-child(even){justify-content:flex-end;}
+.pain-row:nth-child(3n){justify-content:flex-start;}
+
+/* PROCESS */
+.process{background:var(--navy);color:#fff;}
+.process h2{color:var(--yellow);}
+.step-list{display:flex;flex-direction:column;gap:0;}
+.step{display:flex;gap:16px;padding:18px 0;position:relative;}
+.step:not(:last-child)::after{
+  content:"";position:absolute;left:21px;top:54px;bottom:-4px;width:2px;background:#2C3768;
+}
+.step-badge{
+  flex:none;width:44px;height:44px;border-radius:50%;background:var(--yellow);color:var(--black);
+  display:flex;align-items:center;justify-content:center;font-family:'Black Han Sans',sans-serif;font-size:1.1rem;z-index:1;
+}
+.step h3{font-size:1.05rem;margin-bottom:4px;}
+.step p{font-size:.86rem;color:#c9d3ee;margin:0;}
+
+/* REVEAL / COMIC SECTION */
+.comic{
+  background:var(--black);color:#fff;text-align:center;position:relative;overflow:hidden;
+}
+.comic-burst{
+  position:absolute;inset:-10%;
+  background:repeating-conic-gradient(var(--yellow) 0deg 6deg, transparent 6deg 18deg);
+  opacity:.12;
+}
+.comic-inner{position:relative;z-index:1;}
+.comic h2{font-size:clamp(1.7rem,6vw,2.3rem);color:var(--yellow);}
+.comic .tag{
+  display:inline-block;background:var(--red);color:#fff;font-family:'Black Han Sans',sans-serif;
+  padding:8px 18px;border-radius:30px;margin-bottom:18px;transform:rotate(-3deg);
+}
+.comic p.lede{color:#ddd;max-width:480px;margin:18px auto 0;}
+
+/* BADGE NO.1 */
+.badge-section{background:#fff;text-align:center;}
+.ribbon{
+  width:130px;height:130px;border-radius:50%;background:var(--red);color:#fff;margin:0 auto 18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:4px solid #fff;box-shadow:0 0 0 4px var(--red);position:relative;
+}
+.ribbon strong{font-family:'Black Han Sans',sans-serif;font-size:1.5rem;}
+.ribbon span{font-size:.68rem;letter-spacing:1px;}
+.badge-section h2{font-size:1.6rem;}
+
+/* FOOTER CTA */
+.footer-cta{
+  background:var(--yellow);color:var(--black);text-align:center;padding:54px 0 64px;
+  background-image:radial-gradient(circle, rgba(0,0,0,.07) 1.5px, transparent 1.6px);
+  background-size:16px 16px;
+}
+.footer-cta h2{font-size:clamp(1.5rem,5vw,2rem);}
+.phone-btn{
+  display:inline-block;margin-top:18px;background:var(--black);color:var(--yellow);
+  font-family:'Black Han Sans',sans-serif;font-size:clamp(1.5rem,6vw,2.1rem);
+  padding:18px 34px;border-radius:14px;box-shadow:0 6px 0 #000;
+}
+.footer-cta .note{margin-top:14px;font-size:.85rem;color:#3a3318;}
+
+/* STICKY BOTTOM BAR */
+.sticky-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--black);
+  display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;
+  box-shadow:0 -4px 14px rgba(0,0,0,.25);
+}
+.sticky-bar a{
+  background:var(--yellow);color:var(--black);font-family:'Black Han Sans',sans-serif;
+  padding:10px 22px;border-radius:30px;font-size:.95rem;
+}
+.sticky-bar span{color:#fff;font-size:.82rem;}
+body{padding-bottom:62px;}
+
+@media (max-width:600px){
+  .teacher-grid{grid-template-columns:repeat(3,1fr);}
+  .bubble-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2.1rem;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="poster">
+    <span class="eyebrow reveal">국내 · 해외 국제학교 전문</span>
+    <h1 class="reveal">국제학교<br>전문과외</h1>
+    <span class="sub reveal">"학생에게 딱 맞는 공부 방식,<br>선생님이 직접 찾아갑니다"</span>
+    <div class="hero-figure reveal" aria-hidden="true">
+      <svg viewBox="0 0 160 200">
+        <ellipse cx="80" cy="190" rx="60" ry="8" fill="#000" opacity=".4"/>
+        <rect x="40" y="80" width="80" height="100" rx="20" fill="#FFD400"/>
+        <circle cx="80" cy="55" r="38" fill="#FFD400"/>
+        <path d="M50 45 q30 -28 60 0" stroke="#16140F" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="64" cy="55" r="4" fill="#16140F"/>
+        <circle cx="96" cy="55" r="4" fill="#16140F"/>
+        <path d="M62 70 q18 12 36 0" stroke="#16140F" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <rect x="70" y="118" width="20" height="34" rx="6" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="hero-actions reveal">
+      <a href="tel:01039510535" class="btn btn-cta">무료 모의수업 신청 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec traits center" id="traits">
+  <div class="poster">
+    <div class="traits-badge reveal"><h2>이런 선생님이 가르칩니다</h2></div>
+    <div class="trait-list" style="text-align:left;">
+      <div class="trait-item reveal"><span class="trait-num">1</span><p>국내·해외 국제학교 학생을 대상으로 한 수업 노하우</p></div>
+      <div class="trait-item reveal"><span class="trait-num">2</span><p>국내교과 과목 수업방식과 다른 국제학교 전문 교습법</p></div>
+      <div class="trait-item reveal"><span class="trait-num">3</span><p>영어로 수학 수업도 진행 가능 (타과목도 OK)</p></div>
+      <div class="trait-item reveal"><span class="trait-num">4</span><p>실력 검증을 마친 전문 강사진만 배정</p></div>
+      <div class="trait-item reveal"><span class="trait-num">5</span><p>평균 경력 8~15년차 선생님</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec teachers center" id="teachers">
+  <div class="poster">
+    <h2 class="reveal">이래서 믿고 맡깁니다</h2>
+    <p class="sub reveal">과목별 전담 선생님이 따로 있어요</p>
+    <div class="teacher-grid">
+      <div class="teacher-card reveal"><div class="t-avatar" style="background:#A8453A"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#fff"/></svg></div><div class="role">수학 전담</div></div>
+      <div class="teacher-card reveal"><div class="t-avatar" style="background:#2D6CDF"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#fff"/></svg></div><div class="role">영어 전담</div></div>
+      <div class="teacher-card reveal"><div class="t-avatar" style="background:#3F6B66"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#fff"/></svg></div><div class="role">과학 전담</div></div>
+      <div class="teacher-card reveal"><div class="t-avatar" style="background:#8B6F1E"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#fff"/></svg></div><div class="role">내신관리 전담</div></div>
+      <div class="teacher-card reveal"><div class="t-avatar" style="background:#E63946"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#fff"/></svg></div><div class="role">에세이 전담</div></div>
+      <div class="teacher-card reveal"><div class="t-avatar" style="background:#6A4C93"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#fff"/></svg></div><div class="role">입시 전담</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec subjects center" id="subjects">
+  <div class="poster">
+    <h2 class="reveal">국제학교 과목</h2>
+    <p class="sub reveal" style="color:var(--gray)">국제학교 학생이 대신으로 진행하는 모든 학습 전 영역을 전담합니다</p>
+    <table class="reveal">
+      <tr><th>과목</th><th>특징</th></tr>
+      <tr><td>수학</td><td>IB / AP / 알지브라 / 지오메트리 / 프리캘큘러스</td></tr>
+      <tr><td>영어</td><td>ESSAY, LITERATURE, SAT WRITING</td></tr>
+      <tr><td>과학</td><td>PHYSICS, BIOLOGY, CHEMISTRY</td></tr>
+      <tr><td>제2외국어</td><td>중국어: IGCSE / IB CHINESE B 대비<br>일본어: IB JAPANESE B / BEGINNER 대비<br>스페인어: IB SPANISH AB INITIO / SL</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="sec ranking center" id="ranking">
+  <div class="poster">
+    <h2 class="reveal">국제학교 내신 전문과외</h2>
+    <p class="sub reveal">성적 향상 요인 중 가장 중요한 순위는?</p>
+    <div class="rank-list">
+      <div class="rank-row top reveal"><span class="rank-no">1</span><span class="rank-name">국제학교 전문과외</span></div>
+      <div class="rank-row reveal"><span class="rank-no">2</span><span class="rank-name">학원 단체수업</span></div>
+      <div class="rank-row reveal"><span class="rank-no">3</span><span class="rank-name">인터넷 강의</span></div>
+      <div class="rank-row reveal"><span class="rank-no">4</span><span class="rank-name">혼자서 자습</span></div>
+      <div class="rank-row reveal"><span class="rank-no">5</span><span class="rank-name">친구와 스터디</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec reviews center" id="reviews">
+  <div class="poster">
+    <h2 class="reveal">학생과 학부모님이 보내주신 후기</h2>
+    <div class="bubble-grid">
+      <div class="bubble reveal" style="--rr:-1deg">학교 시험 범위에 맞춰 핵심만 짚어주셔서 시험기간이 훨씬 편해졌어요.<span class="who">- 국제학교 10학년 학부모</span></div>
+      <div class="bubble reveal" style="--rr:1deg">영어로 진행되는 수학 수업이 처음엔 걱정됐는데 금방 익숙해졌어요.<span class="who">- 국제학교 8학년</span></div>
+      <div class="bubble reveal" style="--rr:1.5deg">에세이 첨삭을 받을 때마다 논리가 점점 또렷해지는 게 느껴져요.<span class="who">- 국제학교 11학년</span></div>
+      <div class="bubble reveal" style="--rr:-1.5deg">아이 학습 패턴을 정확히 파악하고 수업해주셔서 믿고 맡기고 있어요.<span class="who">- 학부모</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec chart-section center" id="chart">
+  <div class="poster">
+    <h2 class="reveal">꾸준히 올라가는 성적 변화</h2>
+    <p class="sub reveal" style="color:var(--gray)">혼자 공부할 땐 막막했던 국제학교 내신, 학습 방법을 바꾸자 결과가 달라졌어요</p>
+    <div class="chart-wrap reveal">
+      <div class="bar" style="height:32%"><span>C+</span><small>시작</small></div>
+      <div class="bar" style="height:52%"><span>B</span><small>1개월</small></div>
+      <div class="bar" style="height:74%"><span>B+</span><small>2개월</small></div>
+      <div class="bar" style="height:92%"><span>A-</span><small>3개월</small></div>
+    </div>
+    <p class="chart-note">※ 예시 그래프이며 학생별 학습 속도에 따라 결과는 다를 수 있습니다</p>
+  </div>
+</section>
+
+<section class="sec pain center" id="pain">
+  <div class="poster">
+    <h2 class="reveal">이런 고민, 있으신가요?</h2>
+    <div style="margin-top:26px;">
+      <div class="pain-row reveal"><div class="bubble2">숙제가 너무 많아서 공부할 시간이 없어요</div></div>
+      <div class="pain-row reveal"><div class="bubble2">암기 과목은 시험만 보면 머리가 하얘져요</div></div>
+      <div class="pain-row reveal"><div class="bubble2">다른 친구들 모르게 성적을 올리고 싶어요</div></div>
+      <div class="pain-row reveal"><div class="bubble2">개념 정리가 안 된 채로 진도만 나가고 있어요</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec process" id="process">
+  <div class="poster">
+    <h2 class="reveal center">국제학교 과외, 어떻게 진행될까요?</h2>
+    <div class="step-list" style="margin-top:26px;">
+      <div class="step reveal"><div class="step-badge">1</div><div><h3>전화 상담</h3><p>학생의 현재 상황과 목표를 자세히 들어요</p></div></div>
+      <div class="step reveal"><div class="step-badge">2</div><div><h3>무료 모의수업</h3><p>실제 수업 방식을 미리 경험해볼 수 있어요</p></div></div>
+      <div class="step reveal"><div class="step-badge">3</div><div><h3>맞춤 커리큘럼 설계</h3><p>학교 진도와 평가 기준에 맞춰 계획을 세워요</p></div></div>
+      <div class="step reveal"><div class="step-badge">4</div><div><h3>1:1 맞춤 수업 진행</h3><p>학생 성향에 맞는 선생님이 직접 지도해요</p></div></div>
+      <div class="step reveal"><div class="step-badge">5</div><div><h3>진도별 학습 관리</h3><p>매 수업 후 진도와 과제를 꼼꼼히 체크해요</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec comic" id="story">
+  <div class="comic-burst" aria-hidden="true"></div>
+  <div class="poster comic-inner">
+    <span class="tag reveal">이제, 공개합니다!</span>
+    <h2 class="reveal">그동안 꽁꽁 숨겨왔던<br>진짜 공부 이야기</h2>
+    <p class="lede reveal">오랜 시간 쌓아온 국제학교 맞춤 공부법, 이제는 누구나 만나볼 수 있어요</p>
+  </div>
+</section>
+
+<section class="sec badge-section" id="badge">
+  <div class="poster">
+    <div class="ribbon reveal"><strong>No.1</strong><span>EDUCATION</span></div>
+    <h2 class="reveal">1등이 되는 순간까지,<br>함께 갑니다</h2>
+  </div>
+</section>
+
+<section class="footer-cta" id="cta">
+  <div class="poster">
+    <h2 class="reveal">학생들이 직접 선택한<br>국제학교 전문과외</h2>
+    <p class="reveal" style="font-weight:700;margin-top:6px;">무료 모의수업 신청</p>
+    <a href="tel:01039510535" class="phone-btn reveal">010-3951-0535</a>
+    <p class="note">클릭하면 바로 전화 연결됩니다</p>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <span>국제학교 전문과외 문의</span>
+  <a href="tel:01039510535">010-3951-0535</a>
+</div>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
